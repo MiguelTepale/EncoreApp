@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="5xs-Y1-cBe">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="5xs-Y1-cBe">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -36,8 +36,11 @@
                                 <color key="color" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </activityIndicatorView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N6f-85-h6z">
-                                <rect key="frame" x="163" y="258" width="48" height="30"/>
-                                <state key="normal" title="Search"/>
+                                <rect key="frame" x="166" y="258" width="54" height="33"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Search">
+                                    <color key="titleColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="searchArtist:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YCw-76-x2B"/>
                                 </connections>
@@ -54,7 +57,7 @@
                             <constraint firstItem="23j-0d-LOj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="IUf-MI-I1Q"/>
                             <constraint firstItem="N6f-85-h6z" firstAttribute="top" secondItem="S72-VT-DnO" secondAttribute="bottom" constant="29" id="Xn2-nX-ZyS"/>
                             <constraint firstItem="S72-VT-DnO" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="YY4-Bf-3tD"/>
-                            <constraint firstItem="N6f-85-h6z" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="acH-4N-gLp"/>
+                            <constraint firstItem="N6f-85-h6z" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="5.5" id="acH-4N-gLp"/>
                             <constraint firstItem="S72-VT-DnO" firstAttribute="centerX" secondItem="23j-0d-LOj" secondAttribute="centerX" id="iN2-QY-ebT"/>
                         </constraints>
                     </view>
@@ -62,6 +65,7 @@
                     <connections>
                         <outlet property="activityInd" destination="21N-TK-oZ3" id="gvf-eR-6UY"/>
                         <outlet property="artistTextField" destination="S72-VT-DnO" id="aAw-Yh-an6"/>
+                        <outlet property="backgroundImageView" destination="23j-0d-LOj" id="UKr-I5-rK6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

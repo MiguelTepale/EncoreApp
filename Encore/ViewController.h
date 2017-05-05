@@ -12,6 +12,7 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *artistTextField;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityInd;
+@property (weak, nonatomic) IBOutlet UIImageView *backgroundImageView;
 
 - (IBAction)searchArtist:(UIButton *)sender;
 
