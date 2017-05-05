@@ -21,17 +21,27 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jMz-0Q-3aO">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jMz-0Q-3aO">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="301"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="301" id="S71-OW-s2K"/>
+                    </constraints>
                 </imageView>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QsS-LR-bbS">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QsS-LR-bbS">
                     <rect key="frame" x="0.0" y="309" width="375" height="358"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </tableView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="QsS-LR-bbS" secondAttribute="trailing" id="Byi-iG-2bT"/>
+                <constraint firstAttribute="trailing" secondItem="jMz-0Q-3aO" secondAttribute="trailing" id="Vfv-09-YjH"/>
+                <constraint firstItem="jMz-0Q-3aO" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="exE-dc-yuT"/>
+                <constraint firstAttribute="bottom" secondItem="QsS-LR-bbS" secondAttribute="bottom" id="hZc-my-uMc"/>
+                <constraint firstItem="jMz-0Q-3aO" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="ljl-Lh-rH3"/>
+                <constraint firstItem="QsS-LR-bbS" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="pWU-gl-RMi"/>
+                <constraint firstItem="QsS-LR-bbS" firstAttribute="top" secondItem="jMz-0Q-3aO" secondAttribute="bottom" constant="8" symbolic="YES" id="wO0-sC-wVF"/>
+            </constraints>
             <point key="canvasLocation" x="33.5" y="54.5"/>
         </view>
     </objects>
