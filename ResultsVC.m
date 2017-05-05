@@ -9,11 +9,23 @@
 
 #import "ResultsVC.h"
 #import "SongListVC.h"
+#import "WebVC.h"
 
 
 @implementation ResultsVC
 {
     int _requestCount;
+    NSArray *_eventList;
+}
+
+- (void) loadEvents:(NSArray *)events
+{
+    self.eventsTableView.hidden = false;
+    self.resultsTableView.hidden = true;
+    
+    _eventList = events;
+    
+    [self.eventsTableView reloadData];
 }
 
 - (void)viewDidLoad
@@ -32,15 +44,15 @@
                               forState:UIControlStateNormal];
     self.navigationItem.leftBarButtonItem = backButton;
 
+    self.tabBar.delegate = self;
+    
     self.resultsTableView.delegate = self;
     self.resultsTableView.dataSource = self;
-    self.resultsTabBar.delegate = self;
+    
+    self.eventsTableView.delegate = self;
+    self.eventsTableView.dataSource = self;
     
     _requestCount = 0;
-}
-
-- (void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item {
-    NSLog(@"I have been pressed at index %@", self.resultsTabBar.selectedItem);
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////
@@ -74,7 +86,10 @@
 - (NSInteger) tableView:(UITableView *)tableView
   numberOfRowsInSection:(NSInteger)section
 {
-    return self.artist.albumList.count;
+    if (tableView == self.resultsTableView)
+        return self.artist.albumList.count;
+    else
+        return _eventList.count;
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////
@@ -93,41 +108,54 @@
     // If none are available then ...
     if (nil == cell)
         // Create a new row
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle
                                       reuseIdentifier:CellIdentifier];
     
-    Album *album = self.artist.albumList[indexPath.row];
-    cell.textLabel.text = album.name;
-
-    // If we haven't loaded the image yet then ...
-    if (nil == album.imageData)
+    if (tableView == self.resultsTableView)
     {
-        // load the image in the background.
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0),
-                       ^{
-                           NSURL *imageURL = [NSURL URLWithString:album.imageURL];
-                           NSData *imageData = [NSData dataWithContentsOfURL:imageURL];
-                           
-                           ++_requestCount;
-                           
-                           dispatch_sync(dispatch_get_main_queue(),
-                                         ^{
-                                             // display the image and ...
-                                             cell.imageView.image = [[UIImage alloc] initWithData:imageData];
-                                             // "cache" it
-                                             album.imageData = imageData;
-                                             
-                                             // If all image request have been completed then ...
-                                             if (0 == --_requestCount)
-                                                 // refresh the table to see the image
-                                                 [tableView reloadData];
-                                         });
-                       });
+        Album *album = self.artist.albumList[indexPath.row];
+        cell.textLabel.text = album.name;
+        
+        // If we haven't loaded the image yet then ...
+        if (nil == album.imageData)
+        {
+            // load the image in the background.
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0),
+                           ^{
+                               NSURL *imageURL = [NSURL URLWithString:album.imageURL];
+                               NSData *imageData = [NSData dataWithContentsOfURL:imageURL];
+                               
+                               ++_requestCount;
+                               
+                               dispatch_sync(dispatch_get_main_queue(),
+                                             ^{
+                                                 // display the image and ...
+                                                 cell.imageView.image = [[UIImage alloc] initWithData:imageData];
+                                                 // "cache" it
+                                                 album.imageData = imageData;
+                                                 
+                                                 // If all image request have been completed then ...
+                                                 if (0 == --_requestCount)
+                                                     // refresh the table to see the image
+                                                     [tableView reloadData];
+                                             });
+                           });
+        }
+        // Otherwise, ...
+        else
+            // display the "cached" image
+            cell.imageView.image = [UIImage imageWithData:album.imageData];
     }
-    // Otherwise, ...
     else
-        // display the "cached" image
-        cell.imageView.image = [UIImage imageWithData:album.imageData];
+    {
+        Event *event = _eventList[indexPath.row];
+        
+        NSString *dateString = [NSDateFormatter localizedStringFromDate:event.date
+                                                              dateStyle:NSDateFormatterFullStyle
+                                                              timeStyle:NSDateFormatterNoStyle];
+        cell.textLabel.text = [[NSString alloc] initWithFormat:@"%@ - %@", dateString, event.venueName];
+        cell.detailTextLabel.text = event.venueLocation;
+    }
 
     return cell;
 }
@@ -141,7 +169,46 @@
 //////////////////////////////////////////////////////////////////////////////////////////
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self.artist findTracks:indexPath.row displayUnder: self.navigationController];
+    if (tableView == self.resultsTableView)
+        [self.artist findTracks:indexPath.row displayUnder: self.navigationController];
+    else
+    {
+        WebVC *webVC = [[WebVC alloc] init];
+        Event *event = _eventList[indexPath.row];
+        webVC.url = event.eventURL;
+        [self.navigationController pushViewController:webVC animated:YES];
+    }
+}
+
+#pragma mark - UITabBar Delegate Methods
+
+//////////////////////////////////////////////////////////////////////////////////////////
+//
+//  Delegate method that is called when the user touches an item on the tab bar.
+//
+//////////////////////////////////////////////////////////////////////////////////////////
+- (void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item
+{
+    if (item == self.albumsTab)
+    {
+        if (self.resultsTableView.hidden)
+        {
+            self.eventsTableView.hidden = true;
+            self.resultsTableView.hidden = false;
+        }
+    }
+    else if (self.eventsTableView.hidden)
+    {
+        if ([self.eventsTableView numberOfRowsInSection:0] > 0)
+        {
+            self.eventsTableView.hidden = false;
+            self.resultsTableView.hidden = true;
+        }
+        else
+        {
+            [self.artist findEvents:self.artist.name displayUnder:self.navigationController];
+        }
+    }
 }
 
 @end

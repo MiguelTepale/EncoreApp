@@ -11,7 +11,7 @@
 #import "Artist.h"
 
 
-@interface ResultsVC : UIViewController<UITableViewDelegate, UITableViewDataSource,UITabBarControllerDelegate,UITabBarDelegate>
+@interface ResultsVC : UIViewController<UITableViewDelegate, UITableViewDataSource, UITabBarControllerDelegate, UITabBarDelegate>
 
 @property (weak, nonatomic) IBOutlet UIImageView *artistImageView;
 @property (weak, nonatomic) IBOutlet UITableView *resultsTableView;
@@ -22,5 +22,7 @@
 @property (weak, nonatomic) IBOutlet UITabBarItem *eventsTab;
 @property (strong, nonatomic) Artist *artist;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityInd;
+
+- (void) loadEvents:(NSArray *)events;
 
 @end

@@ -11,6 +11,7 @@
 #import "Track.h"
 #import "Model.h"
 #import "SongListVC.h"
+#import "ResultsVC.h"
 
 
 @implementation Artist
@@ -18,6 +19,19 @@
     Model *_model;
     Album *currentAlbum;
     UINavigationController *_navigationController;
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////
+//
+//  Method that execute the search for an artist events.
+//
+//////////////////////////////////////////////////////////////////////////////////////////
+- (void) findEvents:(NSString *)artistName displayUnder:(UINavigationController *) controller
+{
+    _navigationController = controller;
+    
+    // Pass the request to the backend
+    [_model findEvents:artistName];
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////
@@ -45,9 +59,21 @@
     {
         _model = [Model sharedInstance];
         _model.tracksDelegate = self;
+        _model.eventsDelegate = self;
     }
     
     return self;
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////
+//
+//  Method that is called by the Model to return the result of an artist's event search.
+//
+//////////////////////////////////////////////////////////////////////////////////////////
+- (void) didFindEvents:(NSArray *)events
+{
+    ResultsVC *resultsVC = (ResultsVC *) _navigationController.topViewController;
+    [resultsVC loadEvents:events];
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////
@@ -66,6 +92,11 @@
     
     // Display the track list.
     [_navigationController pushViewController:controller animated:YES];
+}
+
+- (void) didNotFindEvents:(NSString *)errorMsg
+{
+    
 }
 
 - (void) didNotFindTracks:(NSString *)errorMsg

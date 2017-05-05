@@ -249,8 +249,8 @@ RequestType;
         // convert date string to NSDate
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
         [dateFormatter setDateFormat:@"YYYY-MM-dd'T'HH:mm:ss"];
-        [dateFormatter setTimeZone:[NSTimeZone systemTimeZone]];
-        e.date = [dateFormatter dateFromString:venue[@"datetime"]];
+//        [dateFormatter setTimeZone:[NSTimeZone systemTimeZone]];
+        e.date = [dateFormatter dateFromString:eventData[@"datetime"]];
 
         e.venueName = venue[@"name"];
         e.venueLocation = [[NSString alloc] initWithFormat:@"%@, %@", venue[@"city"], venue[@"region"]];
