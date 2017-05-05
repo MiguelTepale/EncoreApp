@@ -8,9 +8,13 @@
 
 
 #import "ResultsVC.h"
+#import "SongListVC.h"
 
 
 @implementation ResultsVC
+{
+    int _requestCount;
+}
 
 - (void)viewDidLoad
 {
@@ -19,8 +23,30 @@
     
     self.title = self.artist.name;
     
+    // Add a back button on the left side of the navigation bar
+    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"←"
+                                                                   style:UIBarButtonItemStylePlain
+                                                                  target:self
+                                                                  action:@selector(performBackNavigation:)];
+    [backButton setTitleTextAttributes:@{ NSFontAttributeName:[UIFont systemFontOfSize:30] }
+                              forState:UIControlStateNormal];
+    self.navigationItem.leftBarButtonItem = backButton;
+
     self.resultsTableView.delegate = self;
     self.resultsTableView.dataSource = self;
+    
+    _requestCount = 0;
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////
+//
+//  Method is called when the user hit the back button.
+//
+//////////////////////////////////////////////////////////////////////////////////////////
+- (void) performBackNavigation:(id)sender
+{
+    // Exit current screen
+    [self.navigationController popViewControllerAnimated:NO];
 }
 
 #pragma mark - UITableView Data Source Delegate Methods
@@ -77,12 +103,19 @@
                            NSURL *imageURL = [NSURL URLWithString:album.imageURL];
                            NSData *imageData = [NSData dataWithContentsOfURL:imageURL];
                            
+                           ++_requestCount;
+                           
                            dispatch_sync(dispatch_get_main_queue(),
                                          ^{
                                              // display the image and ...
                                              cell.imageView.image = [[UIImage alloc] initWithData:imageData];
                                              // "cache" it
                                              album.imageData = imageData;
+                                             
+                                             // If all image request have been completed then ...
+                                             if (0 == --_requestCount)
+                                                 // refresh the table to see the image
+                                                 [tableView reloadData];
                                          });
                        });
     }
@@ -94,7 +127,6 @@
     return cell;
 }
 
-#if 0
 #pragma mark - UITableView Delegate Methods
 
 //////////////////////////////////////////////////////////////////////////////////////////
@@ -104,16 +136,7 @@
 //////////////////////////////////////////////////////////////////////////////////////////
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    Article *article = [_articles objectAtIndex:indexPath.row];
-    
-    // Initialize the DetailViewController
-    DetailViewController *controller = [[DetailViewController alloc] init];
-    controller.url = [NSURL URLWithString:article.articleURL];
-    controller.title = self.newsSourceTitle;
-    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:self.navigationItem.backBarButtonItem.style target:nil action:nil];
-    // Display the DetailViewController.
-    [self.navigationController pushViewController:controller animated:YES];
+    [self.artist findTracks:indexPath.row displayUnder: self.navigationController];
 }
-#endif
 
 @end

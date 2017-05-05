@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		09289BEE1EBCE2D20057894E /* Annotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 09289BED1EBCE2D20057894E /* Annotation.m */; };
 		09FDE1C11EBBDD1A0020C4DB /* MapVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 09FDE1BF1EBBDD1A0020C4DB /* MapVC.m */; };
 		09FDE1C21EBBDD1A0020C4DB /* MapVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09FDE1C01EBBDD1A0020C4DB /* MapVC.xib */; };
 		602FA3331EBBDEAD00E9A99F /* Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 602FA3321EBBDEAD00E9A99F /* Model.m */; };
@@ -30,6 +31,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		09289BE41EBCCE3B0057894E /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		09289BEC1EBCE2D20057894E /* Annotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Annotation.h; sourceTree = "<group>"; };
+		09289BED1EBCE2D20057894E /* Annotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Annotation.m; sourceTree = "<group>"; };
 		09FDE1BE1EBBDD1A0020C4DB /* MapVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapVC.h; sourceTree = "<group>"; };
 		09FDE1BF1EBBDD1A0020C4DB /* MapVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapVC.m; sourceTree = "<group>"; };
 		09FDE1C01EBBDD1A0020C4DB /* MapVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MapVC.xib; sourceTree = "<group>"; };
@@ -77,11 +81,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		09289BE31EBCCE3B0057894E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				09289BE41EBCCE3B0057894E /* MapKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		8C110D081EBBDA5700B567C1 = {
 			isa = PBXGroup;
 			children = (
 				8C110D131EBBDA5700B567C1 /* Encore */,
 				8C110D121EBBDA5700B567C1 /* Products */,
+				09289BE31EBCCE3B0057894E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -98,6 +111,8 @@
 			children = (
 				604E0BDD1EBC2AA900F300C9 /* Album.h */,
 				604E0BE11EBC307100F300C9 /* Album.m */,
+				09289BEC1EBCE2D20057894E /* Annotation.h */,
+				09289BED1EBCE2D20057894E /* Annotation.m */,
 				8C110D171EBBDA5700B567C1 /* AppDelegate.h */,
 				8C110D181EBBDA5700B567C1 /* AppDelegate.m */,
 				60FF50061EBC7D2E008A94C4 /* Artist.h */,
@@ -227,6 +242,7 @@
 				8C110D161EBBDA5700B567C1 /* main.m in Sources */,
 				604E0BE31EBC307100F300C9 /* Album.m in Sources */,
 				602FA3331EBBDEAD00E9A99F /* Model.m in Sources */,
+				09289BEE1EBCE2D20057894E /* Annotation.m in Sources */,
 				60FF50081EBC7D2E008A94C4 /* Artist.m in Sources */,
 				8CCC8D3D1EBBE83D00372B01 /* ResultsVC.m in Sources */,
 				8CCC8D421EBBE86100372B01 /* SongListVC.m in Sources */,
