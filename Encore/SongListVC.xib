@@ -11,7 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SongListVC">
             <connections>
-                <outlet property="albumArtImageView" destination="jMz-0Q-3aO" id="gUh-Xx-11E"/>
+                <outlet property="albumArtImageView" destination="LCt-JK-CBl" id="poE-m0-sX8"/>
                 <outlet property="songTableView" destination="QsS-LR-bbS" id="ldt-6B-iUW"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -21,26 +21,40 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jMz-0Q-3aO">
-                    <rect key="frame" x="0.0" y="40" width="375" height="301"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="301" id="S71-OW-s2K"/>
-                    </constraints>
-                </imageView>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QsS-LR-bbS">
                     <rect key="frame" x="0.0" y="349" width="375" height="318"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="318" id="J4t-RL-um8"/>
+                    </constraints>
                 </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B5i-Fk-hF7">
+                    <rect key="frame" x="0.0" y="40" width="375" height="301"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LCt-JK-CBl">
+                            <rect key="frame" x="87" y="50" width="200" height="200"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="200" id="128-TA-7ti"/>
+                                <constraint firstAttribute="width" constant="200" id="Nfa-x2-eQ6"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="LCt-JK-CBl" firstAttribute="centerY" secondItem="B5i-Fk-hF7" secondAttribute="centerY" id="FTH-We-jSD"/>
+                        <constraint firstItem="LCt-JK-CBl" firstAttribute="centerX" secondItem="B5i-Fk-hF7" secondAttribute="centerX" id="z8o-Ee-RQl"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="B5i-Fk-hF7" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="6p9-EE-OYL"/>
                 <constraint firstAttribute="trailing" secondItem="QsS-LR-bbS" secondAttribute="trailing" id="Byi-iG-2bT"/>
-                <constraint firstAttribute="trailing" secondItem="jMz-0Q-3aO" secondAttribute="trailing" id="Vfv-09-YjH"/>
-                <constraint firstItem="jMz-0Q-3aO" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="40" id="exE-dc-yuT"/>
+                <constraint firstItem="QsS-LR-bbS" firstAttribute="top" secondItem="B5i-Fk-hF7" secondAttribute="bottom" constant="8" id="M6c-oB-AzM"/>
                 <constraint firstAttribute="bottom" secondItem="QsS-LR-bbS" secondAttribute="bottom" id="hZc-my-uMc"/>
-                <constraint firstItem="jMz-0Q-3aO" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="ljl-Lh-rH3"/>
+                <constraint firstAttribute="trailing" secondItem="B5i-Fk-hF7" secondAttribute="trailing" id="kiO-m8-JNL"/>
                 <constraint firstItem="QsS-LR-bbS" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="pWU-gl-RMi"/>
-                <constraint firstItem="QsS-LR-bbS" firstAttribute="top" secondItem="jMz-0Q-3aO" secondAttribute="bottom" constant="8" symbolic="YES" id="wO0-sC-wVF"/>
+                <constraint firstItem="B5i-Fk-hF7" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="40" id="qyN-RQ-4jT"/>
             </constraints>
             <point key="canvasLocation" x="33.5" y="54.5"/>
         </view>
