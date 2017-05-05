@@ -14,6 +14,7 @@
 @interface SearchMgr : NSObject<ModelArtistDelegate>
 
 @property (strong, nonatomic) UINavigationController *navigationController;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityInd;
 
 - (instancetype) init;
 - (void) findArtist:(NSString *) name;

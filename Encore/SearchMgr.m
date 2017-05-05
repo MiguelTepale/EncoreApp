@@ -60,6 +60,7 @@
     resultVC.artist = artist;
     
     // Display the search results
+    [self.activityInd stopAnimating];
     [self.navigationController pushViewController:resultVC animated:YES];
 }
 
@@ -70,6 +71,7 @@
 //////////////////////////////////////////////////////////////////////////////////////////
 - (void) didNotFindArtist:(NSString *)errorMsg
 {
+    [self.activityInd stopAnimating];
 }
 
 
