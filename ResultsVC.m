@@ -142,6 +142,7 @@
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [self.artist findTracks:indexPath.row displayUnder: self.navigationController];
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 @end
