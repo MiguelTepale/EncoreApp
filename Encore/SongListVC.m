@@ -39,7 +39,7 @@
 - (void) performBackNavigation:(id)sender
 {
     // Exit current screen
-    [self.navigationController popViewControllerAnimated:NO];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 #pragma mark - UITableView Data Source Delegate Methods

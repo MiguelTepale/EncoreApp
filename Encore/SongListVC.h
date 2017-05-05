@@ -12,7 +12,7 @@
 
 @interface SongListVC : UIViewController<UITableViewDelegate, UITableViewDataSource>
 
-@property (weak, nonatomic) IBOutlet UIImageView *albumArtImageView;
+@property (strong, nonatomic) IBOutlet UIImageView *albumArtImageView;
 @property (weak, nonatomic) IBOutlet UITableView *songTableView;
 @property (strong, nonatomic) NSArray *trackList;
 

@@ -18,6 +18,7 @@
     Model *_model;
     Album *currentAlbum;
     UINavigationController *_navigationController;
+    NSData *testData;
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////
@@ -28,6 +29,7 @@
 - (void) findTracks:(long) albumIndex displayUnder:(UINavigationController *) controller
 {
     currentAlbum = self.albumList[albumIndex];
+    testData = [currentAlbum.imageData copy];
     _navigationController = controller;
     
     // Pass the request to the backend
@@ -60,8 +62,10 @@
     // Initialize the track list view controller
     SongListVC *controller = [[SongListVC alloc] init];
     controller.title = currentAlbum.name;
-    controller.albumArtImageView.image = [UIImage imageWithData:currentAlbum.imageData];
+//    controller.albumArtImageView.image = [UIImage imageWithData:currentAlbum.imageData];
+    controller.albumArtImageView.image = [UIImage imageWithData:testData];
     controller.trackList = tracks;
+    
     
     // Display the track list.
     [_navigationController pushViewController:controller animated:YES];
