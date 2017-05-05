@@ -30,14 +30,31 @@
 
 - (void)viewDidAppear:(BOOL)animated
 {
-    [_searchMgr findArtist:@"Ozzy Osbourne"];
+    
     // Display progress bar ???
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(void)artistEntryNotValidAlert {
+    UIAlertController * alert = [UIAlertController
+                                                                       alertControllerWithTitle:@"Alert!"
+                                                                       message:@"Artist is not valid. Please check spelling or try another artist"
+                                                                       preferredStyle:UIAlertControllerStyleAlert];
+    
+        UIAlertAction *okAction = [UIAlertAction
+                                                                   actionWithTitle:@"Ok"
+                                                                   style:UIAlertActionStyleDefault
+                                                                   handler:^(UIAlertAction *action)
+                                                                   {
+                                                                           NSLog(@"OK action");
+                                                                       }];
+    
+        [alert addAction:okAction];
+        [self presentViewController:alert animated:YES completion:nil];
+        return;
+    
+    }
+
+- (IBAction)searchArtist:(UIButton *)sender {
+    [_searchMgr findArtist:self.artistTextField.text];
 }
-
-
 @end

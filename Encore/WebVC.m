@@ -16,22 +16,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    
+    CGRect screenBounds = [[UIScreen mainScreen]bounds];
+    WKWebViewConfiguration *webConfiguration = [[WKWebViewConfiguration alloc]init];
+    WKWebView *webView = [[WKWebView alloc] initWithFrame:screenBounds configuration:webConfiguration];
+    webView.navigationDelegate = self;
+    
+    NSURL *website = [NSURL URLWithString: self.url];
+    NSURLRequest *urlRequest = [NSURLRequest requestWithURL:website];
+    [webView loadRequest:urlRequest];
+    [self.view addSubview:webView];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

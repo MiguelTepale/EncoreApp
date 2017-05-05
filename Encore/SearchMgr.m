@@ -55,6 +55,7 @@
 //////////////////////////////////////////////////////////////////////////////////////////
 - (void) didFindArtist:(Artist *)artist
 {
+    
     ResultsVC *resultVC = [[ResultsVC alloc] init];
     resultVC.artist = artist;
     

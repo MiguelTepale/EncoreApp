@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <WebKit/WebKit.h>
 
-@interface WebVC : UIViewController
+@interface WebVC : UIViewController <WKNavigationDelegate>
 
+@property(weak, nonatomic) NSString *url;
 @end

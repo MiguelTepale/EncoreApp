@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -13,8 +13,11 @@
             <connections>
                 <outlet property="albumsTab" destination="bpw-3b-Iah" id="DtU-vm-KbZ"/>
                 <outlet property="eventsTab" destination="tHx-Ee-Zwe" id="hKK-6l-tnQ"/>
+                <outlet property="resultsTabBar" destination="L7o-LP-vPe" id="gOP-sx-oZl"/>
+
                 <outlet property="eventsTableView" destination="dM9-Z9-21L" id="cBG-B4-8iu"/>
                 <outlet property="resultsTableView" destination="Kib-H9-tzf" id="ega-d8-1mG"/>
+                <outlet property="tabBar" destination="L7o-LP-vPe" id="Ra2-qU-j9W"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

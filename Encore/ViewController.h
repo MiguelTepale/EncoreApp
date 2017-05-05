@@ -10,6 +10,11 @@
 
 @interface ViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UITextField *artistTextField;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityInd;
+
+- (IBAction)searchArtist:(UIButton *)sender;
+
 
 @end
 
