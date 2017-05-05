@@ -16,6 +16,12 @@
 		8C110D1F1EBBDA5700B567C1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C110D1D1EBBDA5700B567C1 /* Main.storyboard */; };
 		8C110D211EBBDA5700B567C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C110D201EBBDA5700B567C1 /* Assets.xcassets */; };
 		8C110D241EBBDA5700B567C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C110D221EBBDA5700B567C1 /* LaunchScreen.storyboard */; };
+		8CCC8D3D1EBBE83D00372B01 /* ResultsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CCC8D3B1EBBE83D00372B01 /* ResultsVC.m */; };
+		8CCC8D3E1EBBE83D00372B01 /* ResultsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CCC8D3C1EBBE83D00372B01 /* ResultsVC.xib */; };
+		8CCC8D421EBBE86100372B01 /* SongListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CCC8D401EBBE86100372B01 /* SongListVC.m */; };
+		8CCC8D431EBBE86100372B01 /* SongListVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CCC8D411EBBE86100372B01 /* SongListVC.xib */; };
+		8CCC8D471EBBE87800372B01 /* WebVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CCC8D451EBBE87800372B01 /* WebVC.m */; };
+		8CCC8D481EBBE87800372B01 /* WebVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CCC8D461EBBE87800372B01 /* WebVC.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +41,15 @@
 		8C110D201EBBDA5700B567C1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8C110D231EBBDA5700B567C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8C110D251EBBDA5700B567C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8CCC8D3A1EBBE83D00372B01 /* ResultsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ResultsVC.h; path = ../ResultsVC.h; sourceTree = "<group>"; };
+		8CCC8D3B1EBBE83D00372B01 /* ResultsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ResultsVC.m; path = ../ResultsVC.m; sourceTree = "<group>"; };
+		8CCC8D3C1EBBE83D00372B01 /* ResultsVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ResultsVC.xib; path = ../ResultsVC.xib; sourceTree = "<group>"; };
+		8CCC8D3F1EBBE86100372B01 /* SongListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SongListVC.h; sourceTree = "<group>"; };
+		8CCC8D401EBBE86100372B01 /* SongListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SongListVC.m; sourceTree = "<group>"; };
+		8CCC8D411EBBE86100372B01 /* SongListVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SongListVC.xib; sourceTree = "<group>"; };
+		8CCC8D441EBBE87800372B01 /* WebVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebVC.h; sourceTree = "<group>"; };
+		8CCC8D451EBBE87800372B01 /* WebVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebVC.m; sourceTree = "<group>"; };
+		8CCC8D461EBBE87800372B01 /* WebVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WebVC.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +169,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C110D241EBBDA5700B567C1 /* LaunchScreen.storyboard in Resources */,
+				09FDE1C21EBBDD1A0020C4DB /* MapVC.xib in Resources */,
+				8CCC8D481EBBE87800372B01 /* WebVC.xib in Resources */,
+				8CCC8D3E1EBBE83D00372B01 /* ResultsVC.xib in Resources */,
+				8CCC8D431EBBE86100372B01 /* SongListVC.xib in Resources */,
 				8C110D211EBBDA5700B567C1 /* Assets.xcassets in Resources */,
 				8C110D1F1EBBDA5700B567C1 /* Main.storyboard in Resources */,
 			);
@@ -168,7 +187,9 @@
 			files = (
 				604E0BE41EBC307100F300C9 /* Event.m in Sources */,
 				8C110D1C1EBBDA5700B567C1 /* ViewController.m in Sources */,
+				09FDE1C11EBBDD1A0020C4DB /* MapVC.m in Sources */,
 				8C110D191EBBDA5700B567C1 /* AppDelegate.m in Sources */,
+				8CCC8D471EBBE87800372B01 /* WebVC.m in Sources */,
 				8C110D161EBBDA5700B567C1 /* main.m in Sources */,
 				604E0BE31EBC307100F300C9 /* Album.m in Sources */,
 				602FA3331EBBDEAD00E9A99F /* Model.m in Sources */,
