@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		602FA3331EBBDEAD00E9A99F /* Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 602FA3321EBBDEAD00E9A99F /* Model.m */; };
+		604E0BE31EBC307100F300C9 /* Album.m in Sources */ = {isa = PBXBuildFile; fileRef = 604E0BE11EBC307100F300C9 /* Album.m */; };
+		604E0BE41EBC307100F300C9 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 604E0BE21EBC307100F300C9 /* Event.m */; };
 		8C110D161EBBDA5700B567C1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C110D151EBBDA5700B567C1 /* main.m */; };
 		8C110D191EBBDA5700B567C1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C110D181EBBDA5700B567C1 /* AppDelegate.m */; };
 		8C110D1C1EBBDA5700B567C1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C110D1B1EBBDA5700B567C1 /* ViewController.m */; };
@@ -16,6 +19,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		602FA3311EBBDEAD00E9A99F /* Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Model.h; sourceTree = "<group>"; };
+		602FA3321EBBDEAD00E9A99F /* Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Model.m; sourceTree = "<group>"; };
+		604E0BDD1EBC2AA900F300C9 /* Album.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Album.h; sourceTree = "<group>"; };
+		604E0BDE1EBC2BA300F300C9 /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
+		604E0BE11EBC307100F300C9 /* Album.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Album.m; sourceTree = "<group>"; };
+		604E0BE21EBC307100F300C9 /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
 		8C110D111EBBDA5700B567C1 /* Encore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Encore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C110D151EBBDA5700B567C1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8C110D171EBBDA5700B567C1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -58,15 +67,21 @@
 		8C110D131EBBDA5700B567C1 /* Encore */ = {
 			isa = PBXGroup;
 			children = (
+				604E0BDD1EBC2AA900F300C9 /* Album.h */,
+				604E0BE11EBC307100F300C9 /* Album.m */,
 				8C110D171EBBDA5700B567C1 /* AppDelegate.h */,
 				8C110D181EBBDA5700B567C1 /* AppDelegate.m */,
+				8C110D201EBBDA5700B567C1 /* Assets.xcassets */,
+				604E0BDE1EBC2BA300F300C9 /* Event.h */,
+				604E0BE21EBC307100F300C9 /* Event.m */,
+				8C110D251EBBDA5700B567C1 /* Info.plist */,
+				8C110D221EBBDA5700B567C1 /* LaunchScreen.storyboard */,
+				8C110D1D1EBBDA5700B567C1 /* Main.storyboard */,
+				602FA3311EBBDEAD00E9A99F /* Model.h */,
+				602FA3321EBBDEAD00E9A99F /* Model.m */,
+				8C110D141EBBDA5700B567C1 /* Supporting Files */,
 				8C110D1A1EBBDA5700B567C1 /* ViewController.h */,
 				8C110D1B1EBBDA5700B567C1 /* ViewController.m */,
-				8C110D1D1EBBDA5700B567C1 /* Main.storyboard */,
-				8C110D201EBBDA5700B567C1 /* Assets.xcassets */,
-				8C110D221EBBDA5700B567C1 /* LaunchScreen.storyboard */,
-				8C110D251EBBDA5700B567C1 /* Info.plist */,
-				8C110D141EBBDA5700B567C1 /* Supporting Files */,
 			);
 			path = Encore;
 			sourceTree = "<group>";
@@ -151,9 +166,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				604E0BE41EBC307100F300C9 /* Event.m in Sources */,
 				8C110D1C1EBBDA5700B567C1 /* ViewController.m in Sources */,
 				8C110D191EBBDA5700B567C1 /* AppDelegate.m in Sources */,
 				8C110D161EBBDA5700B567C1 /* main.m in Sources */,
+				604E0BE31EBC307100F300C9 /* Album.m in Sources */,
+				602FA3331EBBDEAD00E9A99F /* Model.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -312,6 +330,7 @@
 				8C110D2A1EBBDA5700B567C1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
