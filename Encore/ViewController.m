@@ -55,6 +55,16 @@
     }
 
 - (IBAction)searchArtist:(UIButton *)sender {
-    [_searchMgr findArtist:self.artistTextField.text];
+    NSString *validateText = [[NSString alloc] initWithString:self.artistTextField.text];
+    validateText = [validateText stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+    if ([validateText isEqualToString:@""]) {
+        [self artistEntryNotValidAlert];
+    }
+    else {
+        [self.activityInd startAnimating];
+        _searchMgr.activityInd = self.activityInd;
+        [_searchMgr findArtist:validateText];
+    }
 }
+
 @end

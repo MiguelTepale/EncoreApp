@@ -11,11 +11,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ResultsVC">
             <connections>
+                <outlet property="activityInd" destination="SxU-do-QOM" id="zhs-VB-24n"/>
                 <outlet property="albumsTab" destination="bpw-3b-Iah" id="DtU-vm-KbZ"/>
                 <outlet property="eventsTab" destination="tHx-Ee-Zwe" id="hKK-6l-tnQ"/>
-                <outlet property="resultsTabBar" destination="L7o-LP-vPe" id="gOP-sx-oZl"/>
-
                 <outlet property="eventsTableView" destination="dM9-Z9-21L" id="cBG-B4-8iu"/>
+                <outlet property="resultsTabBar" destination="L7o-LP-vPe" id="gOP-sx-oZl"/>
                 <outlet property="resultsTableView" destination="Kib-H9-tzf" id="ega-d8-1mG"/>
                 <outlet property="tabBar" destination="L7o-LP-vPe" id="Ra2-qU-j9W"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -43,12 +43,18 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </tableView>
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="SxU-do-QOM">
+                    <rect key="frame" x="169" y="315" width="37" height="37"/>
+                    <color key="color" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                </activityIndicatorView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="Kib-H9-tzf" secondAttribute="trailing" id="2ll-Mh-YIl"/>
                 <constraint firstAttribute="trailing" secondItem="L7o-LP-vPe" secondAttribute="trailing" id="4t3-mH-ha7"/>
+                <constraint firstItem="SxU-do-QOM" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="FtO-J1-WGL"/>
                 <constraint firstItem="Kib-H9-tzf" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="KRz-Pr-Y1b"/>
+                <constraint firstItem="SxU-do-QOM" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="VZ5-j9-Nqn"/>
                 <constraint firstItem="Kib-H9-tzf" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Vc5-FZ-I03"/>
                 <constraint firstItem="L7o-LP-vPe" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="d4f-G6-4tZ"/>
                 <constraint firstAttribute="bottom" secondItem="L7o-LP-vPe" secondAttribute="bottom" id="sBT-Bz-Gc5"/>

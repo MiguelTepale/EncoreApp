@@ -40,7 +40,7 @@
 }
 
 - (void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item {
-    NSLog(@"I have been pressed at index %ld", self.resultsTabBar.tag);
+    NSLog(@"I have been pressed at index %@", self.resultsTabBar.selectedItem);
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -32,8 +32,7 @@
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LCt-JK-CBl">
                             <rect key="frame" x="87" y="49.5" width="200" height="200"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="200" id="128-TA-7ti"/>
-                                <constraint firstAttribute="width" constant="200" id="Nfa-x2-eQ6"/>
+                                <constraint firstAttribute="width" secondItem="LCt-JK-CBl" secondAttribute="height" multiplier="1:1" id="W92-iZ-LFN"/>
                             </constraints>
                         </imageView>
                     </subviews>
@@ -41,7 +40,7 @@
                     <constraints>
                         <constraint firstItem="LCt-JK-CBl" firstAttribute="centerY" secondItem="B5i-Fk-hF7" secondAttribute="centerY" id="FTH-We-jSD"/>
                         <constraint firstAttribute="width" secondItem="LCt-JK-CBl" secondAttribute="height" multiplier="15:8" id="PTV-9y-At5"/>
-                        <constraint firstAttribute="height" constant="300" id="Tvf-ds-IDk"/>
+                        <constraint firstAttribute="width" secondItem="B5i-Fk-hF7" secondAttribute="height" multiplier="5:4" id="pqF-6h-i4W"/>
                         <constraint firstItem="LCt-JK-CBl" firstAttribute="centerX" secondItem="B5i-Fk-hF7" secondAttribute="centerX" id="z8o-Ee-RQl"/>
                     </constraints>
                 </view>

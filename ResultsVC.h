@@ -21,5 +21,6 @@
 @property (weak, nonatomic) IBOutlet UITabBarItem *albumsTab;
 @property (weak, nonatomic) IBOutlet UITabBarItem *eventsTab;
 @property (strong, nonatomic) Artist *artist;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityInd;
 
 @end
