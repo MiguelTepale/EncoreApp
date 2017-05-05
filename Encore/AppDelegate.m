@@ -17,6 +17,18 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    UIImageView* splashImageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"splash"]];
+    splashImageView.frame = self.window.rootViewController.view.frame;
+    splashImageView.contentMode = UIViewContentModeScaleToFill;
+    
+    [self.window.rootViewController.view addSubview:splashImageView];
+    [self.window.rootViewController.view bringSubviewToFront:splashImageView];
+    
+    [self.window makeKeyAndVisible];
+    
+    [UIView transitionWithView:self.window duration:5.0 options:UIViewAnimationOptionTransitionNone animations:^(void){splashImageView.alpha = 0.0;} completion:^(BOOL finished){[splashImageView removeFromSuperview];}];
+    
+    
     return YES;
 }
 
