@@ -23,6 +23,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    self.backgroundImageView.image = [UIImage imageNamed:@"splash"];
     
     _searchMgr = [[SearchMgr alloc] init];
     _searchMgr.navigationController = self.navigationController;
