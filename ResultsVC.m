@@ -34,8 +34,13 @@
 
     self.resultsTableView.delegate = self;
     self.resultsTableView.dataSource = self;
+    self.resultsTabBar.delegate = self;
     
     _requestCount = 0;
+}
+
+- (void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item {
+    NSLog(@"I have been pressed at index %ld", self.resultsTabBar.tag);
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////
