@@ -30,7 +30,7 @@
 
 - (void)viewDidAppear:(BOOL)animated
 {
-    [_searchMgr findArtist:@"Ozzy Osbourne"];
+    
     // Display progress bar ???
 }
 
@@ -54,4 +54,7 @@
     
     }
 
+- (IBAction)searchArtist:(UIButton *)sender {
+    [_searchMgr findArtist:self.artistTextField.text];
+}
 @end

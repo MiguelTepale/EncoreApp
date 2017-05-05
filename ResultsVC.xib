@@ -13,11 +13,9 @@
             <connections>
                 <outlet property="albumsTab" destination="bpw-3b-Iah" id="DtU-vm-KbZ"/>
                 <outlet property="eventsTab" destination="tHx-Ee-Zwe" id="hKK-6l-tnQ"/>
-<<<<<<< HEAD
                 <outlet property="resultsTabBar" destination="L7o-LP-vPe" id="gOP-sx-oZl"/>
-=======
+
                 <outlet property="eventsTableView" destination="dM9-Z9-21L" id="cBG-B4-8iu"/>
->>>>>>> 40b76594c3f98d9a244fd2cdfdc5aa912bd75a5c
                 <outlet property="resultsTableView" destination="Kib-H9-tzf" id="ega-d8-1mG"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
