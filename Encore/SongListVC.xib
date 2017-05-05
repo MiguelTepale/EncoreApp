@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -22,17 +23,14 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QsS-LR-bbS">
-                    <rect key="frame" x="0.0" y="349" width="375" height="318"/>
+                    <rect key="frame" x="0.0" y="340" width="375" height="327"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="318" id="J4t-RL-um8"/>
-                    </constraints>
                 </tableView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B5i-Fk-hF7">
-                    <rect key="frame" x="0.0" y="40" width="375" height="301"/>
+                    <rect key="frame" x="0.0" y="40" width="375" height="300"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LCt-JK-CBl">
-                            <rect key="frame" x="87" y="50" width="200" height="200"/>
+                            <rect key="frame" x="87" y="49.5" width="200" height="200"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="200" id="128-TA-7ti"/>
                                 <constraint firstAttribute="width" constant="200" id="Nfa-x2-eQ6"/>
@@ -42,6 +40,8 @@
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstItem="LCt-JK-CBl" firstAttribute="centerY" secondItem="B5i-Fk-hF7" secondAttribute="centerY" id="FTH-We-jSD"/>
+                        <constraint firstAttribute="width" secondItem="LCt-JK-CBl" secondAttribute="height" multiplier="15:8" id="PTV-9y-At5"/>
+                        <constraint firstAttribute="height" constant="300" id="Tvf-ds-IDk"/>
                         <constraint firstItem="LCt-JK-CBl" firstAttribute="centerX" secondItem="B5i-Fk-hF7" secondAttribute="centerX" id="z8o-Ee-RQl"/>
                     </constraints>
                 </view>
@@ -50,8 +50,8 @@
             <constraints>
                 <constraint firstItem="B5i-Fk-hF7" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="6p9-EE-OYL"/>
                 <constraint firstAttribute="trailing" secondItem="QsS-LR-bbS" secondAttribute="trailing" id="Byi-iG-2bT"/>
-                <constraint firstItem="QsS-LR-bbS" firstAttribute="top" secondItem="B5i-Fk-hF7" secondAttribute="bottom" constant="8" id="M6c-oB-AzM"/>
-                <constraint firstAttribute="bottom" secondItem="QsS-LR-bbS" secondAttribute="bottom" id="hZc-my-uMc"/>
+                <constraint firstAttribute="bottom" secondItem="QsS-LR-bbS" secondAttribute="bottom" id="O9b-jc-p84"/>
+                <constraint firstItem="QsS-LR-bbS" firstAttribute="top" secondItem="B5i-Fk-hF7" secondAttribute="bottom" id="kWp-Ez-1ub"/>
                 <constraint firstAttribute="trailing" secondItem="B5i-Fk-hF7" secondAttribute="trailing" id="kiO-m8-JNL"/>
                 <constraint firstItem="QsS-LR-bbS" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="pWU-gl-RMi"/>
                 <constraint firstItem="B5i-Fk-hF7" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="40" id="qyN-RQ-4jT"/>

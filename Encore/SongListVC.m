@@ -31,7 +31,10 @@
 
     self.songTableView.delegate = self;
     self.songTableView.dataSource = self;
+    
+    self.automaticallyAdjustsScrollViewInsets = NO;
 }
+
 
 //////////////////////////////////////////////////////////////////////////////////////////
 //
