@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface SongListVC : UIViewController
+@property (weak, nonatomic) IBOutlet UIImageView *albumArtImageView;
+@property (weak, nonatomic) IBOutlet UITableView *songTableView;
 
 @end

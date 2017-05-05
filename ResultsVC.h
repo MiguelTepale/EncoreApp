@@ -9,5 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface ResultsVC : UIViewController
+@property (weak, nonatomic) IBOutlet UIImageView *artistImageView;
+@property (weak, nonatomic) IBOutlet UITableView *resultsTableView;
+@property (weak, nonatomic) IBOutlet UITabBarItem *albumsTab;
+@property (weak, nonatomic) IBOutlet UITabBarItem *eventsTab;
 
 @end
