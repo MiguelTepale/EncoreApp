@@ -26,6 +26,8 @@
     [backButton setTitleTextAttributes:@{ NSFontAttributeName:[UIFont systemFontOfSize:30] }
                               forState:UIControlStateNormal];
     self.navigationItem.leftBarButtonItem = backButton;
+    
+    self.albumArtImageView.image = [[UIImage alloc]initWithData:self.album.imageData];
 
     self.songTableView.delegate = self;
     self.songTableView.dataSource = self;
