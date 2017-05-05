@@ -15,6 +15,7 @@
 @property (nonatomic) long id;
 @property (strong, nonatomic) NSString *name;
 @property (strong, nonatomic) NSString *imageURL;
+@property (strong, nonatomic) NSData *imageData;
 
 @end
 

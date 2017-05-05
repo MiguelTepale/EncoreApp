@@ -6,19 +6,33 @@
 //  Copyright © 2017 Miguel Tepale. All rights reserved.
 //
 
+
 #import "ViewController.h"
+#import "SearchMgr.h"
+
 
 @interface ViewController ()
 
 @end
 
 @implementation ViewController
+{
+    SearchMgr *_searchMgr;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    _searchMgr = [[SearchMgr alloc] init];
+    _searchMgr.navigationController = self.navigationController;
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [_searchMgr findArtist:@"Ozzy Osbourne"];
+    // Display progress bar ???
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

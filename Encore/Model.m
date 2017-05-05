@@ -15,7 +15,8 @@ typedef void (^GetRequestCompletionHandler)(id);
 typedef enum
 {
     ARTIST_REQUEST,
-    EVENT_REQUEST
+    EVENT_REQUEST,
+    TRACK_REQUEST
 }
 RequestType;
 
@@ -41,11 +42,11 @@ RequestType;
 
     GetRequestCompletionHandler completionHandler = ^ void (NSDictionary *dataDictionary)
     {
-        // Extract the list of albums from the data
-        NSMutableArray *albums = [self parseArtistData:dataDictionary];
+        // Extract the artist and their list of albums from the data
+        Artist *artist = [self parseArtistData:dataDictionary];
         
         // Notify the delegate that the get was successful
-        [self.artistDelegate didFindArtist:albums];
+        [self.artistDelegate didFindArtist:artist];
     };
     
     _currentRequestType = ARTIST_REQUEST;
@@ -75,6 +76,31 @@ RequestType;
     };
     
     _currentRequestType = EVENT_REQUEST;
+    
+    [self executeHTTPGetRequest:urlStr
+          withCompletionHandler:completionHandler];
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////
+//
+//  Method to asynchronously request album's track data.
+//
+//////////////////////////////////////////////////////////////////////////////////////////
+- (void) findTracks:(long)albumId
+{
+    // Format a URL string for a query
+    NSString *urlStr = [[NSString alloc] initWithFormat:@"https://itunes.apple.com/lookup?id=%ld&entity=song", albumId];
+    
+    GetRequestCompletionHandler completionHandler = ^ void (NSDictionary *dataDictionary)
+    {
+        // Extract the list of album tracks from the data
+        NSMutableArray *tracks = [self parseTracksData:dataDictionary];
+        
+        // Notify the delegate that the get was successful
+        [self.tracksDelegate didFindTracks:tracks];
+    };
+    
+    _currentRequestType = TRACK_REQUEST;
     
     [self executeHTTPGetRequest:urlStr
           withCompletionHandler:completionHandler];
@@ -164,7 +190,11 @@ RequestType;
                                  case EVENT_REQUEST:
                                      [self.eventsDelegate didNotFindEvents:[error localizedDescription]];
                                      break;
-                                     
+                                
+                                 case TRACK_REQUEST:
+                                     [self.tracksDelegate didNotFindTracks:[error localizedDescription]];
+                                     break;
+                                    
                                  default:
                                      NSAssert(false, @"Unrecognized request type.");
                              }
@@ -178,23 +208,27 @@ RequestType;
 //  Method to parse the returned data into an array of artist's albums.
 //
 //////////////////////////////////////////////////////////////////////////////////////////
-- (NSMutableArray *) parseArtistData:(NSDictionary *)dataDictionary
+- (Artist *) parseArtistData:(NSDictionary *)dataDictionary
 {
     NSArray *albumDataArray = dataDictionary[@"results"];
-    NSMutableArray *albums = [[NSMutableArray alloc] init];
+    Artist *artist = [[Artist alloc] init];
+    artist.albumList = [[NSMutableArray alloc] init];
+    artist.name = nil;
     
     for (NSDictionary *albumData in albumDataArray)
     {
         Album *a = [[Album alloc] init];
         
+        if (nil == artist.name)
+            artist.name = albumData[@"artistName"];
         a.id = [albumData[@"collectionId"] longLongValue];
         a.name = albumData[@"collectionName"];
-        a.imageURL = albumData[@"collectionViewUrl"];
+        a.imageURL = albumData[@"artworkUrl100"];
         
-        [albums addObject:a];
+        [artist.albumList addObject:a];
     }
     
-    return albums;
+    return artist;
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////
@@ -240,6 +274,32 @@ RequestType;
     }
     
     return events;
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////
+//
+//  Method to parse the returned data into an array of album tracks.
+//
+//////////////////////////////////////////////////////////////////////////////////////////
+- (NSMutableArray *) parseTracksData:(NSDictionary *)dataDictionary
+{
+    NSArray *trackDataArray = dataDictionary[@"results"];
+    NSMutableArray *tracks = [[NSMutableArray alloc] init];
+    
+    for (NSDictionary *trackData in trackDataArray)
+        if ([trackData[@"wrapperType"] isEqualToString:@"track"])
+        {
+            Track *t = [[Track alloc] init];
+            
+            t.discNumber = [trackData[@"discNumber"] intValue];
+            t.trackNumber = [trackData[@"trackNumber"] intValue];
+            t.name = trackData[@"trackName"];
+            t.time = [trackData[@"trackTimeMillis"] longLongValue];
+            
+            [tracks addObject:t];
+        }
+    
+    return tracks;
 }
 
 @end
