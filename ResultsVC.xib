@@ -17,6 +17,7 @@
 
                 <outlet property="eventsTableView" destination="dM9-Z9-21L" id="cBG-B4-8iu"/>
                 <outlet property="resultsTableView" destination="Kib-H9-tzf" id="ega-d8-1mG"/>
+                <outlet property="tabBar" destination="L7o-LP-vPe" id="Ra2-qU-j9W"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
