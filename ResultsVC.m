@@ -34,6 +34,7 @@
     // Do any additional setup after loading the view from its nib.
     
     self.title = self.artist.name;
+    self.eventsTableView.contentInset = UIEdgeInsetsMake(65,0,0,0);
     
     // Add a back button on the left side of the navigation bar
     UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"←"
