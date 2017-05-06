@@ -9,6 +9,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    // Add a back button on the left side of the navigation bar
+    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"←"
+                                                                   style:UIBarButtonItemStylePlain
+                                                                  target:self
+                                                                  action:@selector(performBackNavigation:)];
+    [backButton setTitleTextAttributes:@{ NSFontAttributeName:[UIFont systemFontOfSize:30] }
+                              forState:UIControlStateNormal];
+    self.navigationItem.leftBarButtonItem = backButton;
+    
     self.locationManager = [[CLLocationManager alloc] init];
     [self.locationManager requestAlwaysAuthorization];
     self.locationManager.delegate = self;
@@ -22,6 +32,14 @@
     [self setVenueAnnotation];
 }
 
+//  Method is called when the user hit the back button.
+- (void) performBackNavigation:(id)sender
+{
+    // Exit current screen
+    [self.navigationController popViewControllerAnimated:NO];
+}
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -30,10 +48,10 @@
 
 - (void)setVenueAnnotation {
     // *Use for testing*
-//    self.venueLatitude = 40.70859189999999;
-//    self.venueLongitude = -74.01492050000002;
-//    self.venueName = @"Turn To Tech";
-//    self.venueLocation = @"Learn, Build Apps, Get Hired";
+    self.venueLatitude = self.event.latitude;
+    self.venueLongitude = self.event.longitude;
+    self.venueName = self.event.venueName;
+    self.venueLocation = self.event.venueLocation;
     
     CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(self.venueLatitude, self.venueLongitude);
     
@@ -41,7 +59,7 @@
     
     [self.mapView addAnnotation:venuePin];
     
-    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(coordinate, 250, 250);
+    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(coordinate, 500, 500);
     [self.mapView setRegion:region animated:YES];
 }
 

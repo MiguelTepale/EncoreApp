@@ -74,11 +74,24 @@ RequestType;
     
     GetRequestCompletionHandler completionHandler = ^ void (NSArray *dataArray)
     {
-        // Extract the list of events from the data
-        NSMutableArray *events = [self parseEventData:dataArray];
-        
-        // Notify the delegate that the get was successful
-        [self.eventsDelegate didFindEvents:events];
+        // If received a message then ...
+        if (1 == dataArray.count)
+        {
+            // Extract the error message
+            NSDictionary *msgData = (NSDictionary *)dataArray;
+            NSString *msg = msgData[@"message"];
+                                    
+            // Notify the delegate that the get failed
+            [self.eventsDelegate didNotFindEvents:msg];
+        }
+        else
+        {
+            // Extract the list of events from the data
+            NSMutableArray *events = [self parseEventData:dataArray];
+            
+            // Notify the delegate that the get was successful
+            [self.eventsDelegate didFindEvents:events];
+        }
     };
     
     _currentRequestType = EVENT_REQUEST;

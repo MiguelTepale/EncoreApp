@@ -10,6 +10,7 @@
 #import "ResultsVC.h"
 #import "SongListVC.h"
 #import "WebVC.h"
+#import "ViewController.h"
 
 
 @implementation ResultsVC
@@ -20,12 +21,20 @@
 
 - (void) loadEvents:(NSArray *)events
 {
-    self.eventsTableView.hidden = false;
-    self.resultsTableView.hidden = true;
-    
-    _eventList = events;
-    
-    [self.eventsTableView reloadData];
+    if (0 == events.count)
+    {
+        ViewController *vc = self.navigationController.viewControllers[0];
+        [vc displayError:@"No events found for this artist."];
+    }
+    else
+    {
+        self.eventsTableView.hidden = false;
+        self.resultsTableView.hidden = true;
+        
+        _eventList = events;
+        
+        [self.eventsTableView reloadData];
+    }
 }
 
 - (void)viewDidLoad
@@ -184,6 +193,7 @@
         WebVC *webVC = [[WebVC alloc] init];
         Event *event = _eventList[indexPath.row];
         webVC.url = event.eventURL;
+        webVC.event = event;
         [self.navigationController pushViewController:webVC animated:YES];
         [tableView deselectRowAtIndexPath:indexPath animated:YES];
     }
