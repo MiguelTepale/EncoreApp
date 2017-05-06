@@ -66,6 +66,11 @@
     _requestCount = 0;
 }
 
+- (UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
+}
+
 //////////////////////////////////////////////////////////////////////////////////////////
 //
 //  Method is called when the user hit the back button.

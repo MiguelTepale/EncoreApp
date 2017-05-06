@@ -22,11 +22,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
     self.backgroundImageView.image = [UIImage imageNamed:@"splash"];
     
     _searchMgr = [[SearchMgr alloc] init];
     _searchMgr.navigationController = self.navigationController;
+    self.artistTextField.delegate = self;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -42,6 +43,30 @@
 - (UIStatusBarStyle)preferredStatusBarStyle
 {
     return UIStatusBarStyleLightContent;
+}
+
+- (BOOL)prefersStatusBarHidden {
+    return NO;
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    
+    NSString *validateText = [[NSString alloc] initWithString:self.artistTextField.text];
+    validateText = [validateText stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+    if ([validateText isEqualToString:@""]) {
+        [self displayError:@"Artist is not valid. Please check spelling or try another artist"];
+        //        [self artistEntryNotValidAlert];
+    }
+    else {
+        [self.activityInd startAnimating];
+        _searchMgr.activityInd = self.activityInd;
+        [_searchMgr findArtist:validateText];
+        self.artistTextField.text = @"";
+        [self.view endEditing:YES];
+    }
+    
+    [self.artistTextField resignFirstResponder];
+    return YES;
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////

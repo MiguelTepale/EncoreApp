@@ -17,6 +17,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
     UIImageView* splashImageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"splash"]];
     splashImageView.frame = self.window.rootViewController.view.frame;
     splashImageView.contentMode = UIViewContentModeScaleToFill;
@@ -26,7 +27,7 @@
     
     [self.window makeKeyAndVisible];
     
-    [UIView transitionWithView:self.window duration:5.0 options:UIViewAnimationOptionTransitionNone animations:^(void){splashImageView.alpha = 0.0;} completion:^(BOOL finished){[splashImageView removeFromSuperview];}];
+    [UIView transitionWithView:self.window duration:1.0 options:UIViewAnimationOptionTransitionNone animations:^(void){splashImageView.alpha = 0.0;} completion:^(BOOL finished){[splashImageView removeFromSuperview];}];
     
     UIView* splashView = [[UIView alloc]init];
     UILabel* splashLabel = [[UILabel alloc]initWithFrame:CGRectMake(10, 50, 200, 40)];
@@ -41,15 +42,19 @@
     [splashLabel setCenter:splashView.center];
     splashLabel.textAlignment = NSTextAlignmentCenter;
     
-    
     [self.window.rootViewController.view addSubview:splashView];
     [self.window.rootViewController.view bringSubviewToFront:splashView];
     
     [self.window makeKeyAndVisible];
     
-    [UIView transitionWithView:self.window duration:8.0 options:UIViewAnimationOptionTransitionNone animations:^(void){splashView.alpha = 0.0;} completion:^(BOOL finished){[splashView removeFromSuperview];}];
+    [UIView transitionWithView:self.window duration:2 options:UIViewAnimationOptionTransitionNone animations:^(void){splashView.alpha = 0.0;} completion:^(BOOL finished){[splashView removeFromSuperview];}];
     
     return YES;
+}
+
+- (UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
 }
 
 
