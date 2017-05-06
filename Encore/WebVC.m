@@ -55,6 +55,7 @@
 - (void) segueToMapVC {
     MapVC *mapVC = [[MapVC alloc] init];
     mapVC.event = self.event;
+    mapVC.title = @"Event Location";
     [self.navigationController pushViewController:mapVC animated:YES];
 }
 
