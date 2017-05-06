@@ -17,6 +17,24 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"←"
+                                                                   style:UIBarButtonItemStylePlain
+                                                                  target:self
+                                                                  action:@selector(performBackNavigation)];
+    [backButton setTitleTextAttributes:@{ NSFontAttributeName:[UIFont systemFontOfSize:30] }
+                              forState:UIControlStateNormal];
+    self.navigationItem.leftBarButtonItem = backButton;
+    
+    UIBarButtonItem *mapButton = [[UIBarButtonItem alloc] initWithTitle:@"MapIt"
+                                                                   style:UIBarButtonItemStylePlain
+                                                                  target:self
+                                                                  action:@selector(segueToMapVc)];
+    [backButton setTitleTextAttributes:@{ NSFontAttributeName:[UIFont systemFontOfSize:30] }
+                              forState:UIControlStateNormal];
+    self.navigationItem.rightBarButtonItem = mapButton;
+    
+    self.navigationItem.title = @"Event";
+    
     CGRect screenBounds = [[UIScreen mainScreen]bounds];
     WKWebViewConfiguration *webConfiguration = [[WKWebViewConfiguration alloc]init];
     WKWebView *webView = [[WKWebView alloc] initWithFrame:screenBounds configuration:webConfiguration];
@@ -26,6 +44,10 @@
     NSURLRequest *urlRequest = [NSURLRequest requestWithURL:website];
     [webView loadRequest:urlRequest];
     [self.view addSubview:webView];
+}
+
+- (void)performBackNavigation {
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 

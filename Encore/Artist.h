@@ -14,15 +14,17 @@
 #import "Track.h"
 
 
+@protocol ModelEventsDelegate;
 @protocol ModelTracksDelegate;
 
 
-@interface Artist : NSObject <ModelTracksDelegate>
+@interface Artist : NSObject <ModelEventsDelegate, ModelTracksDelegate>
 
 @property (strong, nonatomic) NSString *name;
 @property (strong, nonatomic) NSMutableArray *albumList;
 @property (strong, nonatomic) NSMutableArray *eventList;
 
+- (void) findEvents:(NSString *) artistName displayUnder:(UINavigationController *) controller;
 - (void) findTracks:(long) albumIndex displayUnder:(UINavigationController *) controller;
 - (instancetype) init;
 
