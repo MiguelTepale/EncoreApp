@@ -183,6 +183,7 @@
         WebVC *webVC = [[WebVC alloc] init];
         Event *event = _eventList[indexPath.row];
         webVC.url = event.eventURL;
+        webVC.event = event;
         [self.navigationController pushViewController:webVC animated:YES];
         [tableView deselectRowAtIndexPath:indexPath animated:YES];
     }

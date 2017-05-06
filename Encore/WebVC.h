@@ -8,8 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import <WebKit/WebKit.h>
+#import "Event.h"
+
 
 @interface WebVC : UIViewController <WKNavigationDelegate>
 
 @property(weak, nonatomic) NSString *url;
+@property (strong, nonatomic) Event *event;
+
 @end

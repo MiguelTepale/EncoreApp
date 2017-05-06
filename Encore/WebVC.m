@@ -7,6 +7,8 @@
 //
 
 #import "WebVC.h"
+#import "MapVC.h"
+
 
 @interface WebVC ()
 
@@ -28,7 +30,7 @@
     UIBarButtonItem *mapButton = [[UIBarButtonItem alloc] initWithTitle:@"MapIt"
                                                                    style:UIBarButtonItemStylePlain
                                                                   target:self
-                                                                  action:@selector(segueToMapVc)];
+                                                                  action:@selector(segueToMapVC)];
     [backButton setTitleTextAttributes:@{ NSFontAttributeName:[UIFont systemFontOfSize:30] }
                               forState:UIControlStateNormal];
     self.navigationItem.rightBarButtonItem = mapButton;
@@ -50,5 +52,10 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
+- (void) segueToMapVC {
+    MapVC *mapVC = [[MapVC alloc] init];
+    mapVC.event = self.event;
+    [self.navigationController pushViewController:mapVC animated:YES];
+}
 
 @end
