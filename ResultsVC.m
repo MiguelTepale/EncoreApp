@@ -31,7 +31,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    
+    self.navigationController.navigationBarHidden = NO;
     
     self.title = self.artist.name;
     self.eventsTableView.contentInset = UIEdgeInsetsMake(65,0,0,0);
@@ -64,7 +65,7 @@
 - (void) performBackNavigation:(id)sender
 {
     // Exit current screen
-    [self.navigationController popViewControllerAnimated:NO];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 #pragma mark - UITableView Data Source Delegate Methods

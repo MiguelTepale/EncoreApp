@@ -29,10 +29,14 @@
     _searchMgr.navigationController = self.navigationController;
 }
 
-- (void)viewDidAppear:(BOOL)animated
-{
+- (void)viewWillAppear:(BOOL)animated {
     
-    // Display progress bar ???
+    self.navigationController.navigationBarHidden = YES;
+}
+
+-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    
+    [self.artistTextField resignFirstResponder];
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////
@@ -72,6 +76,8 @@
         [self.activityInd startAnimating];
         _searchMgr.activityInd = self.activityInd;
         [_searchMgr findArtist:validateText];
+        self.artistTextField.text = @"";
+        [self.view endEditing:YES];
     }
 }
 
