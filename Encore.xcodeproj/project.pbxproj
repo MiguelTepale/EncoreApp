@@ -187,7 +187,7 @@
 				TargetAttributes = {
 					8C110D101EBBDA5700B567C1 = {
 						CreatedOnToolsVersion = 8.3.1;
-						DevelopmentTeam = 5P88HHTNS2;
+						DevelopmentTeam = 5C8D6R84CB;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -365,10 +365,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 5P88HHTNS2;
+				DEVELOPMENT_TEAM = 5C8D6R84CB;
 				INFOPLIST_FILE = Encore/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = TTT.Encore;
+				PRODUCT_BUNDLE_IDENTIFIER = "Miguel-Tepale.Encore";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -377,10 +377,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 5P88HHTNS2;
+				DEVELOPMENT_TEAM = 5C8D6R84CB;
 				INFOPLIST_FILE = Encore/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = TTT.Encore;
+				PRODUCT_BUNDLE_IDENTIFIER = "Miguel-Tepale.Encore";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

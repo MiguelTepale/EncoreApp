@@ -39,6 +39,11 @@
     [self.artistTextField resignFirstResponder];
 }
 
+- (UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
+}
+
 //////////////////////////////////////////////////////////////////////////////////////////
 //
 //  Method to display an error message.

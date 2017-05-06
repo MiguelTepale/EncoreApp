@@ -28,6 +28,26 @@
     
     [UIView transitionWithView:self.window duration:5.0 options:UIViewAnimationOptionTransitionNone animations:^(void){splashImageView.alpha = 0.0;} completion:^(BOOL finished){[splashImageView removeFromSuperview];}];
     
+    UIView* splashView = [[UIView alloc]init];
+    UILabel* splashLabel = [[UILabel alloc]initWithFrame:CGRectMake(10, 50, 200, 40)];
+    [splashView addSubview:splashLabel];
+    
+    splashView.backgroundColor = [UIColor blackColor];
+    splashLabel.textColor = [UIColor whiteColor];
+    UIFont* splashFont = [UIFont fontWithName:@"AppleSDGothicNeo-Bold" size:50.0];
+    splashLabel.font = splashFont;
+    splashLabel.text = @"Encore!";
+    splashView.frame = self.window.rootViewController.view.frame;
+    [splashLabel setCenter:splashView.center];
+    splashLabel.textAlignment = NSTextAlignmentCenter;
+    
+    
+    [self.window.rootViewController.view addSubview:splashView];
+    [self.window.rootViewController.view bringSubviewToFront:splashView];
+    
+    [self.window makeKeyAndVisible];
+    
+    [UIView transitionWithView:self.window duration:8.0 options:UIViewAnimationOptionTransitionNone animations:^(void){splashView.alpha = 0.0;} completion:^(BOOL finished){[splashView removeFromSuperview];}];
     
     return YES;
 }
