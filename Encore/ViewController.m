@@ -35,31 +35,38 @@
     // Display progress bar ???
 }
 
--(void)artistEntryNotValidAlert {
-    UIAlertController * alert = [UIAlertController
-                                                                       alertControllerWithTitle:@"Alert!"
-                                                                       message:@"Artist is not valid. Please check spelling or try another artist"
-                                                                       preferredStyle:UIAlertControllerStyleAlert];
+//////////////////////////////////////////////////////////////////////////////////////////
+//
+//  Method to display an error message.
+//
+//////////////////////////////////////////////////////////////////////////////////////////
+- (void) displayError:(NSString *)errorMsg
+{
+    // Initialize the controller for displaying the message
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@" "
+                                                                   message:errorMsg
+                                                            preferredStyle:UIAlertControllerStyleAlert];
     
-        UIAlertAction *okAction = [UIAlertAction
-                                                                   actionWithTitle:@"Ok"
-                                                                   style:UIAlertActionStyleDefault
-                                                                   handler:^(UIAlertAction *action)
-                                                                   {
-                                                                           NSLog(@"OK action");
-                                                                       }];
+    // Create an OK button
+    UIAlertAction* okButton = [UIAlertAction actionWithTitle:@"OK"
+                                                       style:UIAlertActionStyleDefault
+                                                     handler:nil];
     
-        [alert addAction:okAction];
-        [self presentViewController:alert animated:YES completion:nil];
-        return;
+    // Add the button to the controller
+    [alert addAction:okButton];
     
-    }
+    // Display the alert controller on the topmost viewController
+    UINavigationController *navigationController = (UINavigationController *)[UIApplication sharedApplication].keyWindow.rootViewController;
+    [navigationController.topViewController presentViewController:alert animated:YES completion:nil];
+}
+
 
 - (IBAction)searchArtist:(UIButton *)sender {
     NSString *validateText = [[NSString alloc] initWithString:self.artistTextField.text];
     validateText = [validateText stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
     if ([validateText isEqualToString:@""]) {
-        [self artistEntryNotValidAlert];
+        [self displayError:@"Artist is not valid. Please check spelling or try another artist"];
+//        [self artistEntryNotValidAlert];
     }
     else {
         [self.activityInd startAnimating];

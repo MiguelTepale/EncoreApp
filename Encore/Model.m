@@ -45,8 +45,14 @@ RequestType;
         // Extract the artist and their list of albums from the data
         Artist *artist = [self parseArtistData:dataDictionary];
         
-        // Notify the delegate that the get was successful
-        [self.artistDelegate didFindArtist:artist];
+        // If there is no name then ...
+        if (nil == artist.name)
+            // Notify the delegate that the artist is invalid
+            [self.artistDelegate didNotFindArtist:@"Artist not found."];
+        // Otherwise, ...
+        else
+            // Notify the delegate that the get was successful
+            [self.artistDelegate didFindArtist:artist];
     };
     
     _currentRequestType = ARTIST_REQUEST;

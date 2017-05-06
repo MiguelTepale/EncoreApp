@@ -38,9 +38,8 @@
                         <tabBarItem title="Events" id="tHx-Ee-Zwe"/>
                     </items>
                 </tabBar>
-                <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dM9-Z9-21L" userLabel="Events Table View">
+                <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dM9-Z9-21L" userLabel="Events Table View">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </tableView>
                 <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="SxU-do-QOM">
@@ -53,11 +52,15 @@
                 <constraint firstAttribute="trailing" secondItem="Kib-H9-tzf" secondAttribute="trailing" id="2ll-Mh-YIl"/>
                 <constraint firstAttribute="trailing" secondItem="L7o-LP-vPe" secondAttribute="trailing" id="4t3-mH-ha7"/>
                 <constraint firstItem="SxU-do-QOM" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="FtO-J1-WGL"/>
+                <constraint firstItem="L7o-LP-vPe" firstAttribute="top" secondItem="dM9-Z9-21L" secondAttribute="bottom" id="Gsa-TQ-LWG"/>
                 <constraint firstItem="Kib-H9-tzf" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="KRz-Pr-Y1b"/>
                 <constraint firstItem="SxU-do-QOM" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="VZ5-j9-Nqn"/>
                 <constraint firstItem="Kib-H9-tzf" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Vc5-FZ-I03"/>
                 <constraint firstItem="L7o-LP-vPe" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="d4f-G6-4tZ"/>
+                <constraint firstItem="dM9-Z9-21L" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="g4b-MD-lPp"/>
+                <constraint firstItem="dM9-Z9-21L" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="iMR-Go-ZKj"/>
                 <constraint firstAttribute="bottom" secondItem="L7o-LP-vPe" secondAttribute="bottom" id="sBT-Bz-Gc5"/>
+                <constraint firstAttribute="trailing" secondItem="dM9-Z9-21L" secondAttribute="trailing" id="wTG-wv-1n2"/>
                 <constraint firstItem="L7o-LP-vPe" firstAttribute="top" secondItem="Kib-H9-tzf" secondAttribute="bottom" id="wbx-UO-Vm2"/>
             </constraints>
             <point key="canvasLocation" x="33.5" y="54.5"/>

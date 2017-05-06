@@ -12,6 +12,7 @@
 #import "Model.h"
 #import "SongListVC.h"
 #import "ResultsVC.h"
+#import "ViewController.h"
 
 
 @implementation Artist
@@ -96,12 +97,14 @@
 
 - (void) didNotFindEvents:(NSString *)errorMsg
 {
-    
+    ViewController *vc = _navigationController.viewControllers[0];
+    [vc displayError:errorMsg];
 }
 
 - (void) didNotFindTracks:(NSString *)errorMsg
 {
-
+    ViewController *vc = _navigationController.viewControllers[0];
+    [vc displayError:errorMsg];
 }
 
 @end

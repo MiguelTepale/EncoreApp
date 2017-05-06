@@ -10,6 +10,7 @@
 #import <UIKit/UIKit.h>
 #import "SearchMgr.h"
 #import "ResultsVC.h"
+#import "ViewController.h"
 
 
 @implementation SearchMgr
@@ -72,6 +73,8 @@
 - (void) didNotFindArtist:(NSString *)errorMsg
 {
     [self.activityInd stopAnimating];
+    ViewController *vc = self.navigationController.viewControllers[0];
+    [vc displayError:errorMsg];
 }
 
 
