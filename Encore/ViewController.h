@@ -16,6 +16,7 @@
 
 - (IBAction)searchArtist:(UIButton *)sender;
 
+- (void) displayError:(NSString *)errorMsg;
 
 @end
 
