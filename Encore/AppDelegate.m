@@ -49,6 +49,8 @@
     
     [UIView transitionWithView:self.window duration:2 options:UIViewAnimationOptionTransitionNone animations:^(void){splashView.alpha = 0.0;} completion:^(BOOL finished){[splashView removeFromSuperview];}];
     
+//    [[UITabBar appearance] setUnselectedItemTintColor:[UIColor blueColor]];
+    
     return YES;
 }
 

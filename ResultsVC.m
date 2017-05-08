@@ -41,6 +41,7 @@
 {
     [super viewDidLoad];
     
+    [self.tabBar setSelectedItem:self.albumsTab];
     self.navigationController.navigationBarHidden = NO;
     
     self.title = self.artist.name;
@@ -70,6 +71,8 @@
 {
     return UIStatusBarStyleLightContent;
 }
+
+
 
 //////////////////////////////////////////////////////////////////////////////////////////
 //
