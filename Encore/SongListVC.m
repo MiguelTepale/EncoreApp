@@ -89,8 +89,21 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
                                       reuseIdentifier:CellIdentifier];
     
+    // Get the corresponding track for the row
     Track *track = self.trackList[indexPath.row];
-    cell.textLabel.text = [[NSString alloc] initWithFormat:@"%d - %d   %@", track.discNumber, track.trackNumber, track.name];
+    
+    // Get the first and last track
+    Track *firstTrack = self.trackList[0];
+    Track *lastTrack = self.trackList[self.trackList.count - 1];
+    
+    // if the first and last track are on the same disc then ...
+    if (firstTrack.discNumber == lastTrack.discNumber)
+        // display the current track without the disc number
+        cell.textLabel.text = [[NSString alloc] initWithFormat:@"%d   %@", track.trackNumber, track.name];
+    // Otherwise, ...
+    else
+        // This is a mult-disc album, display the disc number along with track info
+        cell.textLabel.text = [[NSString alloc] initWithFormat:@"%d - %d   %@", track.discNumber, track.trackNumber, track.name];
     
     return cell;
 }
