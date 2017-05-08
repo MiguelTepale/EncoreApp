@@ -25,6 +25,7 @@
     {
         ViewController *vc = self.navigationController.viewControllers[0];
         [vc displayError:@"No events found for this artist."];
+        [self.tabBar setSelectedItem:self.albumsTab];
     }
     else
     {

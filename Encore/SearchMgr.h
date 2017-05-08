@@ -9,7 +9,8 @@
 
 #import <Foundation/Foundation.h>
 #import "Model.h"
-
+#import "ResultsVC.h"
+@class ViewController;
 
 @interface SearchMgr : NSObject<ModelArtistDelegate>
 

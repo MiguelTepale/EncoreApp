@@ -61,7 +61,6 @@
         [self.activityInd startAnimating];
         _searchMgr.activityInd = self.activityInd;
         [_searchMgr findArtist:validateText];
-        self.artistTextField.text = @"";
         [self.view endEditing:YES];
     }
     
@@ -106,7 +105,6 @@
         [self.activityInd startAnimating];
         _searchMgr.activityInd = self.activityInd;
         [_searchMgr findArtist:validateText];
-        self.artistTextField.text = @"";
         [self.view endEditing:YES];
     }
 }

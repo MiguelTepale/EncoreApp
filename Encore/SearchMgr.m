@@ -62,6 +62,8 @@
     
     // Display the search results
     [self.activityInd stopAnimating];
+    ViewController *vc = self.navigationController.viewControllers[0];
+    vc.artistTextField.text = @"";
     [self.navigationController pushViewController:resultVC animated:YES];
 }
 
