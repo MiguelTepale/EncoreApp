@@ -7,13 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <WebKit/WebKit.h>
 #import "Event.h"
 
 
-@interface WebVC : UIViewController <WKNavigationDelegate>
+@interface WebVC : UIViewController <UIWebViewDelegate>
 
 @property(weak, nonatomic) NSString *url;
 @property (strong, nonatomic) Event *event;
+@property (weak, nonatomic) IBOutlet UIWebView *webView;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityInd;
 
 @end

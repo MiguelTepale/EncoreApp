@@ -37,15 +37,10 @@
     
     self.navigationItem.title = @"Event";
     
-    CGRect screenBounds = [[UIScreen mainScreen]bounds];
-    WKWebViewConfiguration *webConfiguration = [[WKWebViewConfiguration alloc]init];
-    WKWebView *webView = [[WKWebView alloc] initWithFrame:screenBounds configuration:webConfiguration];
-    webView.navigationDelegate = self;
-    
+    self.webView.delegate = self;
     NSURL *website = [NSURL URLWithString: self.url];
     NSURLRequest *urlRequest = [NSURLRequest requestWithURL:website];
-    [webView loadRequest:urlRequest];
-    [self.view addSubview:webView];
+    [self.webView loadRequest:urlRequest];
 }
 
 - (void)performBackNavigation {
@@ -57,6 +52,16 @@
     mapVC.event = self.event;
     mapVC.title = @"Event Location";
     [self.navigationController pushViewController:mapVC animated:YES];
+}
+
+- (void)webViewDidStartLoad:(UIWebView *)webView {
+    [self.activityInd startAnimating];
+    self.activityInd.hidden = NO;
+}
+
+- (void)webViewDidFinishLoad:(UIWebView *)webView {
+    [self.activityInd stopAnimating];
+    self.activityInd.hidden = YES;
 }
 
 @end

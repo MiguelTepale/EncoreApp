@@ -1,20 +1,45 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WebVC">
             <connections>
+                <outlet property="activityInd" destination="mw4-2O-Zk8" id="Qf4-6o-e2T"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="webView" destination="Hrl-Jl-sxe" id="8t3-tj-6J3"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hrl-Jl-sxe">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </webView>
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="mw4-2O-Zk8">
+                    <rect key="frame" x="169" y="315" width="37" height="37"/>
+                    <color key="color" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                </activityIndicatorView>
+            </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Hrl-Jl-sxe" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="3CU-GN-U4K"/>
+                <constraint firstAttribute="bottom" secondItem="Hrl-Jl-sxe" secondAttribute="bottom" id="6nH-Xx-VOR"/>
+                <constraint firstItem="mw4-2O-Zk8" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="E4h-am-Cbt"/>
+                <constraint firstItem="mw4-2O-Zk8" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Hkl-XG-i8l"/>
+                <constraint firstAttribute="trailing" secondItem="Hrl-Jl-sxe" secondAttribute="trailing" id="fC4-bG-jDr"/>
+                <constraint firstItem="Hrl-Jl-sxe" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="ulF-pC-wIt"/>
+            </constraints>
+            <point key="canvasLocation" x="35.5" y="70.5"/>
         </view>
     </objects>
 </document>
