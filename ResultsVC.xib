@@ -34,8 +34,8 @@
                     <rect key="frame" x="0.0" y="618" width="375" height="49"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <items>
-                        <tabBarItem title="Albums" id="bpw-3b-Iah"/>
-                        <tabBarItem title="Events" id="tHx-Ee-Zwe"/>
+                        <tabBarItem title="Albums" image="cdCaseIcon_2.ico" id="bpw-3b-Iah"/>
+                        <tabBarItem title="Events" image="microphoneIcon.ico" id="tHx-Ee-Zwe"/>
                     </items>
                 </tabBar>
                 <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dM9-Z9-21L" userLabel="Events Table View">
@@ -66,4 +66,8 @@
             <point key="canvasLocation" x="33.5" y="54.5"/>
         </view>
     </objects>
+    <resources>
+        <image name="cdCaseIcon_2.ico" width="30" height="30"/>
+        <image name="microphoneIcon.ico" width="30" height="30"/>
+    </resources>
 </document>
