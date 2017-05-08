@@ -64,7 +64,6 @@
         [self.view endEditing:YES];
     }
     
-    [self.artistTextField resignFirstResponder];
     return YES;
 }
 

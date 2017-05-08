@@ -16,6 +16,8 @@
 		604E0BE71EBC5CE100F300C9 /* Track.m in Sources */ = {isa = PBXBuildFile; fileRef = 604E0BE61EBC5CE100F300C9 /* Track.m */; };
 		604E0BEA1EBC609200F300C9 /* SearchMgr.m in Sources */ = {isa = PBXBuildFile; fileRef = 604E0BE91EBC609200F300C9 /* SearchMgr.m */; };
 		60FF50081EBC7D2E008A94C4 /* Artist.m in Sources */ = {isa = PBXBuildFile; fileRef = 60FF50071EBC7D2E008A94C4 /* Artist.m */; };
+		8C0EB74B1EC0D8880031671A /* cdCaseIcon_2.ico in Resources */ = {isa = PBXBuildFile; fileRef = 8C0EB74A1EC0D8880031671A /* cdCaseIcon_2.ico */; };
+		8C0EB74D1EC0D9720031671A /* microphoneIcon.ico in Resources */ = {isa = PBXBuildFile; fileRef = 8C0EB74C1EC0D9720031671A /* microphoneIcon.ico */; };
 		8C110D161EBBDA5700B567C1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C110D151EBBDA5700B567C1 /* main.m */; };
 		8C110D191EBBDA5700B567C1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C110D181EBBDA5700B567C1 /* AppDelegate.m */; };
 		8C110D1C1EBBDA5700B567C1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C110D1B1EBBDA5700B567C1 /* ViewController.m */; };
@@ -49,6 +51,8 @@
 		604E0BE91EBC609200F300C9 /* SearchMgr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchMgr.m; sourceTree = "<group>"; };
 		60FF50061EBC7D2E008A94C4 /* Artist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Artist.h; sourceTree = "<group>"; };
 		60FF50071EBC7D2E008A94C4 /* Artist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Artist.m; sourceTree = "<group>"; };
+		8C0EB74A1EC0D8880031671A /* cdCaseIcon_2.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; path = cdCaseIcon_2.ico; sourceTree = "<group>"; };
+		8C0EB74C1EC0D9720031671A /* microphoneIcon.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; path = microphoneIcon.ico; sourceTree = "<group>"; };
 		8C110D111EBBDA5700B567C1 /* Encore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Encore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C110D151EBBDA5700B567C1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8C110D171EBBDA5700B567C1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -89,11 +93,21 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		8C0EB7451EC0D3C00031671A /* Pictures */ = {
+			isa = PBXGroup;
+			children = (
+				8C0EB74C1EC0D9720031671A /* microphoneIcon.ico */,
+				8C0EB74A1EC0D8880031671A /* cdCaseIcon_2.ico */,
+			);
+			name = Pictures;
+			sourceTree = "<group>";
+		};
 		8C110D081EBBDA5700B567C1 = {
 			isa = PBXGroup;
 			children = (
 				8C110D131EBBDA5700B567C1 /* Encore */,
 				8C110D121EBBDA5700B567C1 /* Products */,
+				8C0EB7451EC0D3C00031671A /* Pictures */,
 				09289BE31EBCCE3B0057894E /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -221,6 +235,8 @@
 				8CCC8D3E1EBBE83D00372B01 /* ResultsVC.xib in Resources */,
 				8CCC8D431EBBE86100372B01 /* SongListVC.xib in Resources */,
 				8C110D211EBBDA5700B567C1 /* Assets.xcassets in Resources */,
+				8C0EB74D1EC0D9720031671A /* microphoneIcon.ico in Resources */,
+				8C0EB74B1EC0D8880031671A /* cdCaseIcon_2.ico in Resources */,
 				8C110D1F1EBBDA5700B567C1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

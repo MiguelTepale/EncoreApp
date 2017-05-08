@@ -108,4 +108,8 @@
     return cell;
 }
 
+- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+//Cell will not highlight. If you want to enable selecting a cell, go to songlistVC.xibxr and select "selection" and change it from "no selection" to "single selection"
+}
+
 @end
