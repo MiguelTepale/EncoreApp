@@ -36,7 +36,7 @@
                                 <color key="color" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </activityIndicatorView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N6f-85-h6z">
-                                <rect key="frame" x="166" y="258" width="54" height="33"/>
+                                <rect key="frame" x="160.5" y="258" width="54" height="33"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Search">
                                     <color key="titleColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -57,7 +57,7 @@
                             <constraint firstItem="23j-0d-LOj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="IUf-MI-I1Q"/>
                             <constraint firstItem="N6f-85-h6z" firstAttribute="top" secondItem="S72-VT-DnO" secondAttribute="bottom" constant="29" id="Xn2-nX-ZyS"/>
                             <constraint firstItem="S72-VT-DnO" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="YY4-Bf-3tD"/>
-                            <constraint firstItem="N6f-85-h6z" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="5.5" id="acH-4N-gLp"/>
+                            <constraint firstItem="N6f-85-h6z" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="acH-4N-gLp"/>
                             <constraint firstItem="S72-VT-DnO" firstAttribute="centerX" secondItem="23j-0d-LOj" secondAttribute="centerX" id="iN2-QY-ebT"/>
                         </constraints>
                     </view>
